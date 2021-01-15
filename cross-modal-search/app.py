@@ -75,7 +75,7 @@ def main(task, num_docs, request_size, data_set):
     if task == 'index':
         f = Flow().load_config('flow-index.yml')
         with f:
-            f.index(input_fn=input_index_data(num_docs, request_size, data_set), batch_size=request_size)
+            f.index(input_fn=input_index_data(num_docs, request_size, data_set), request_size=request_size)
     elif task == 'query-restful':
         # not working, missing a way to send modality via REST API
         f = Flow().load_config('flow-query.yml')
